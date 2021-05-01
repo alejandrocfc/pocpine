@@ -1,0 +1,18 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation "io.cucumber:cucumber-junit:6.10.3"
+    implementation "net.serenity-bdd:serenity-core:2.4.24"
+    implementation "net.serenity-bdd:serenity-cucumber:1.9.51"
+    implementation "net.serenity-bdd:serenity-junit:2.4.24"
+    implementation "net.serenity-bdd:serenity-screenplay:2.4.24"
+}
