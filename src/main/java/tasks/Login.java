@@ -7,13 +7,13 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.thucydides.core.annotations.Step;
 import userinterfaces.HomePage;
 
-public class TapIncrement implements Task {
-    @Step("Incrementar Botón")
+public class Login implements Task {
+    @Step("Login sin credenciales")
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(HomePage.FLOATING_BUTTON));
+        actor.attemptsTo(Click.on(HomePage.LOGIN_BUTTON));
     }
-    public static TapIncrement executeAction(){
-        return Tasks.instrumented(TapIncrement.class);
+    public static Login withoutCredential(){
+        return Tasks.instrumented(Login.class);
     }
 }

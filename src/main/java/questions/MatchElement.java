@@ -9,10 +9,10 @@ public class MatchElement implements Question<String> {
 
     @Override
     public String answeredBy(Actor actor) {
-        return "asdasdasdasd";
+        return Text.of(HomePage.ALERT_CONTENT).viewedBy(actor).asString();
     }
 
-    public static MatchElement getInstance(){
+    public static MatchElement getText(){
         return new MatchElement();
     }
 }
