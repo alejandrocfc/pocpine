@@ -1,4 +1,4 @@
 Feature: Counter
   Scenario: Counter
     When User tap button
-    Then Text should be display 1
+    Then Text should be display

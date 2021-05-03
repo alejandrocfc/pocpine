@@ -6,7 +6,12 @@ import io.cucumber.java.en.When;
 import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actors.Cast;
 import net.serenitybdd.screenplay.actors.OnStage;
+import questions.MatchElement;
+import tasks.TapIncrement;
 import utils.Setup;
+
+import static net.serenitybdd.screenplay.GivenWhenThen.*;
+import static org.hamcrest.Matchers.*;
 
 public class CounterStepDefinition {
     @Before
@@ -17,9 +22,13 @@ public class CounterStepDefinition {
     }
     @When("User tap button")
     public void userTapButton() {
-
+        OnStage.theActorInTheSpotlight().attemptsTo(TapIncrement.executeAction());
     }
-    @Then("Text should be display {int}")
-    public void textShouldBeDisplay(Integer int1) {
+    @Then("Text should be display")
+    public void textShouldBeDisplay() {
+        System.out.println(MatchElement.getInstance());
+        OnStage.theActorInTheSpotlight().should(
+                seeThat(MatchElement.getInstance(),
+                is(equalTo("questions.MatchElement@2e88bfab"))));
     }
 }
